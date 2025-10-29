@@ -1,0 +1,9 @@
+[submodule "src/openfast"]
+	path = src/openfast
+	url = https://github.com/dzalkind/openfast.git
+[submodule "src/ROSCO"]
+	path = src/ROSCO
+	url = https://github.com/jesseishi/ROSCO
+[submodule "src/WEIS"]
+	path = src/WEIS
+	url = https://github.com/jesseishi/WEIS
