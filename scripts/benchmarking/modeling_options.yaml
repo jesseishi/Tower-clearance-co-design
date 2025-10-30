@@ -1,0 +1,112 @@
+General:
+  openfast_configuration:
+    use_exe: True
+    FAST_exe: /scratch/jhummel/tip_clearance/src/openfast/install/bin/openfast
+    turbsim_exe: /scratch/jhummel/tip_clearance/src/openfast/install/bin/turbsim
+    path2dll: /scratch/jhummel/tip_clearance/src/ROSCO/rosco/lib/libdiscon.so
+
+
+WISDEM:
+    RotorSE:
+        flag: True
+        spar_cap_ss: Spar_Cap_SS
+        spar_cap_ps: Spar_Cap_PS
+        te_ss: TE_reinforcement_SS
+        te_ps: TE_reinforcement_PS
+        n_span: 50
+    DriveSE:
+        flag: True
+    TowerSE:
+        flag: True
+        wind: PowerWind  # Wind used
+        gamma_f: 1.35    # Safety factor for fatigue loads
+        gamma_m: 1.3     # Safety factor for material properties
+        gamma_n: 1.0     # Safety factor for ...
+        gamma_b: 1.1     # Safety factor for ...
+        gamma_fatigue: 1.755  # Safety factor for fatigue loads
+        buckling_length: 30    # Buckling parameter
+        soil_springs: True
+        gravity_foundation: False
+        frame3dd:
+            shear: True
+            geom: True
+            tol: 1e-9
+    FixedBottomSE:
+        flag: True
+        soil_springs: True
+    BOS:
+        flag: True
+
+# WISDEM:
+#     RotorSE:
+#         flag: False
+#         spar_cap_ss: Spar_Cap_SS
+#         spar_cap_ps: Spar_Cap_PS
+#         te_ss: TE_reinforcement_SS
+#         te_ps: TE_reinforcement_PS
+#     TowerSE:
+#         flag: False
+#     DriveSE:
+#         flag: False
+#     FloatingSE:
+#         flag: False
+#     BOS:
+#         flag: False
+
+OpenFAST:
+  flag: True
+  simulation:
+    DT: 0.001
+    CompElast: 1
+    CompInflow: 1
+    CompAero: 2
+    CompServo: 1
+    CompSeaSt: 0
+    CompHydro: 0
+    CompSub: 1
+    CompMooring: 0
+    CompIce: 0
+  ElastoDyn:
+    FlapDOF1: True
+    FlapDOF2: True
+    EdgeDOF: True
+    DrTrDOF: True
+    GenDOF: True
+    YawDOF: False
+    TwFADOF1: False
+    TwFADOF2: False
+    TwSSDOF1: False
+    TwSSDOF2: False
+    PtfmSgDOF: False
+    PtfmSwDOF: False
+    PtfmHvDOF: False
+    PtfmRDOF: False
+    PtfmPDOF: False
+    PtfmYDOF: False
+  ServoDyn:
+    Ptch_Cntrl: 1
+
+ROSCO:
+  flag: True
+  ps_percent: 0.80
+  DISCON:
+    # Set the tower clearance control mode.
+    TCIPC_ControlMode: 1
+    TCIPC_MaxTipDeflection: 10
+    TCIPC_GS_n: 12
+    TCIPC_GS_WindSpeeds: [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]
+    TCIPC_GS_AzimuthOffsets: [16.4211115111729, 17.8477415584046, 17.6703867079527, 25.2692399113936, 28.6740066604018, 27.8044171907273, 28.1861334454076, 28.8812135958126, 29.6647528218874, 30.5298758920957, 31.4512681506896, 32.428314399426]
+
+    # For it to work properly, we only have hardware saturation, a lower minimum pitch limit (for the IPC in below-rated conditions) and a higher allowable pitch rate.
+    IPC_SatMode: 0
+    PC_MinPit: -0.35907
+    PC_MaxRat: 0.7
+    PC_MinRat: -0.7
+
+DLC_driver:
+  DLCs:
+    - DLC: "1.1"
+      wind_speed: [10.0]
+      n_seeds: 1
+      analysis_time: 20.0
+      transient_time: 0.0
