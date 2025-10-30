@@ -3,7 +3,7 @@
 #SBATCH --job-name="weis-test" 
 #SBATCH --partition=compute 
 #SBATCH --time=01:30:00 
-#SBATCH --ntasks=2 
+#SBATCH --ntasks=4 
 #SBATCH --cpus-per-task=1 
 #SBATCH --mem-per-cpu=2GB
 
