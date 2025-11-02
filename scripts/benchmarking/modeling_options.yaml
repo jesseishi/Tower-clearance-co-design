@@ -18,52 +18,30 @@ WISDEM:
         flag: True
     TowerSE:
         flag: True
-        wind: PowerWind  # Wind used
-        gamma_f: 1.35    # Safety factor for fatigue loads
-        gamma_m: 1.3     # Safety factor for material properties
-        gamma_n: 1.0     # Safety factor for ...
-        gamma_b: 1.1     # Safety factor for ...
-        gamma_fatigue: 1.755  # Safety factor for fatigue loads
-        buckling_length: 30    # Buckling parameter
-        soil_springs: True
-        gravity_foundation: False
-        frame3dd:
-            shear: True
-            geom: True
-            tol: 1e-9
+        gamma_f: 1.35
+        gamma_m: 1.3
+        gamma_n: 1.0
+        gamma_b: 1.1
+        gamma_fatigue: 1.755
+        buckling_length: 30
     FixedBottomSE:
-        flag: True
-        soil_springs: True
+        flag: False  # If False, we can also disable SubDyn (50% faster simtime).
     BOS:
         flag: True
-
-# WISDEM:
-#     RotorSE:
-#         flag: False
-#         spar_cap_ss: Spar_Cap_SS
-#         spar_cap_ps: Spar_Cap_PS
-#         te_ss: TE_reinforcement_SS
-#         te_ps: TE_reinforcement_PS
-#     TowerSE:
-#         flag: False
-#     DriveSE:
-#         flag: False
-#     FloatingSE:
-#         flag: False
-#     BOS:
-#         flag: False
 
 OpenFAST:
   flag: True
   simulation:
     DT: 0.001
+    DT_Out: 0.1
+    NumCrctn: 0
     CompElast: 1
     CompInflow: 1
     CompAero: 2
     CompServo: 1
     CompSeaSt: 0
     CompHydro: 0
-    CompSub: 1
+    CompSub: 0
     CompMooring: 0
     CompIce: 0
   ElastoDyn:

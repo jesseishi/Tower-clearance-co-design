@@ -28,3 +28,4 @@ comm.Barrier()
 sys.stdout.flush()  # Make sure all outputs are written
 sys.stderr.flush()
 os._exit(0)  # Terminate
+

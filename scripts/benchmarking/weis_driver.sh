@@ -1,11 +1,11 @@
 #!/bin/sh
 #
 #SBATCH --job-name="weis-test" 
-#SBATCH --partition=compute 
+#SBATCH --partition=compute-p2 
 #SBATCH --time=01:30:00 
 #SBATCH --ntasks=4 
-#SBATCH --cpus-per-task=1 
-#SBATCH --mem-per-cpu=2GB
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=1GB
 
 # Load necessary modules. The intel module is needed to run OpenFAST
 # (libmkl_gf_lp64.so.2).
