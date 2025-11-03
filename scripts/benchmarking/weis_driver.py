@@ -1,17 +1,21 @@
 import os
 import sys
-from weis import weis_main
+
 from mpi4py import MPI
+from weis import weis_main
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
-wt_input = os.path.join(this_dir, '../../data/IEA-15-240-RWT.yaml')
-modeling_options = os.path.join(this_dir, 'modeling_options.yaml')
-analysis_options = os.path.join(this_dir, 'analysis_options.yaml')
+wt_input = os.path.join(this_dir, "../../data/turbine_models/IEA-15-240-RWT.yaml")
+modeling_options = os.path.join(this_dir, "modeling_options.yaml")
+analysis_options = os.path.join(this_dir, "analysis_options.yaml")
+
+test_run = True
 
 wt_opt, modeling_options, opt_options = weis_main(
     wt_input,
     modeling_options,
     analysis_options,
+    test_run=test_run,
 )
 
 # Sometimes the job 'hangs' when it is complete due to an MPI process that is not
@@ -28,4 +32,3 @@ comm.Barrier()
 sys.stdout.flush()  # Make sure all outputs are written
 sys.stderr.flush()
 os._exit(0)  # Terminate
-

@@ -4,3 +4,5 @@
 # Slurm outputs.
 slurm-*.out
 
+# Outputs from simulations.
+data/benchmarking
