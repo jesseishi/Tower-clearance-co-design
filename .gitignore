@@ -1,3 +1,6 @@
-# Ignore slurm outputs.
+# IDE settings.
+.vscode/
+
+# Slurm outputs.
 slurm-*.out
 
