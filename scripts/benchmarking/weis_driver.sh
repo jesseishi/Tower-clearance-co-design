@@ -6,6 +6,7 @@
 #SBATCH --ntasks=4 
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=1GB
+#SBATCH --account=research-ME-DCSC
 
 # Load necessary modules. The intel module is needed to run OpenFAST
 # (libmkl_gf_lp64.so.2).
