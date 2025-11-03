@@ -25,15 +25,16 @@ WISDEM:
         gamma_fatigue: 1.755
         buckling_length: 30
     FixedBottomSE:
-        flag: False  # If False, we can also disable SubDyn (50% faster simtime).
+      flag: False  # If False, we can also disable SubDyn (50% faster simtime).
+    FloatingSE:
+      flag: False
     BOS:
         flag: True
 
 OpenFAST:
   flag: True
   simulation:
-    DT: 0.001
-    DT_Out: 0.1
+    DT: 0.025
     NumCrctn: 0
     CompElast: 1
     CompInflow: 1
@@ -48,7 +49,7 @@ OpenFAST:
     FlapDOF1: True
     FlapDOF2: True
     EdgeDOF: True
-    DrTrDOF: True
+    DrTrDOF: False
     GenDOF: True
     YawDOF: False
     TwFADOF1: False
