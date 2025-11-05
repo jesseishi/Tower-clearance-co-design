@@ -1,3 +1,31 @@
 general:
   folder_output: ../../data/benchmarking/test/
   fname_output: test
+
+design_variables:
+  control:
+    ps_percent:
+      flag: true
+      lower_bound: 0.7
+      upper_bound: 1.0
+
+    servo:
+      tcipc_control:
+        TCIPC_MaxTipDeflection:
+          flag: true
+          min: 8.0
+          max: 12.0
+
+merit_figure_user:
+  name: aeroelastic.max_TipDxc_towerPassing
+
+driver:
+  design_of_experiments:
+    flag: true
+    run_parallel: true
+    generator: Uniform
+    num_samples: 5
+
+recorder:
+  flag: true
+  file_name: log_doe.sql
