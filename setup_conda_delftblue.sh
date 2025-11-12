@@ -45,7 +45,7 @@ conda env update --file environment.yml
 
 # Other dependencies not listed in either environment.yml.
 echo "Installing other dependencies..."
-conda install -y mpi4py
+conda install -y petsc4py=3.22.2 mpi4py pyoptsparse
 
 # Now install ROSCO and WEIS.
 echo "Installing ROSCO package..."
@@ -55,6 +55,11 @@ pip install -e . --no-deps
 echo "Installing WEIS package..."
 cd "$BASE_DIR/src/WEIS"
 pip install -e . --no-deps
+
+# Compile all the modules. I think that this helped me avoid issues when running with many cpu's spread out over multiple nodes.
+echo "Compiling all python modules in the tip_clearance environment."
+cd "~./conda/envs/tip_clearance"
+run python -m compileall .
 
 # Deactivate the conda environment.
 conda deactivate
