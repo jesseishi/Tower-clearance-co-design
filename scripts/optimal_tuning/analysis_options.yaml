@@ -1,0 +1,31 @@
+general:
+  folder_output: ../../data/optimal_tuning/test/
+  fname_output: test
+
+design_variables:
+  control:
+    ps_percent:
+      flag: true
+      lower_bound: 0.7
+      upper_bound: 1.0
+
+    servo:
+      tcipc_control:
+        TCIPC_MaxTipDeflection:
+          flag: true
+          min: 8.0
+          max: 20.0
+
+merit_figure_user:
+  name: aeroelastic.max_TipDxc_towerPassing
+
+driver:
+  optimization:
+    flag: true
+    tol: 0.1
+    max_iter: 2
+    solver: "COBYLA"
+
+recorder:
+  flag: true
+  file_name: log_test.sql
