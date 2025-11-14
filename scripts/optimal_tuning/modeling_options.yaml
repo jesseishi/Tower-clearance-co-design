@@ -71,7 +71,7 @@ OpenFAST:
 ROSCO:
   flag: True
   ps_percent: 0.80
-  TCIPC_ControlMode: 0
+  TCIPC_ControlMode: 1
   TCIPC_MaxTipDeflection: 10
   DISCON:
     TCIPC_GS_n: 12
