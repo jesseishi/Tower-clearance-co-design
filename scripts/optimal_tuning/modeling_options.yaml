@@ -76,8 +76,7 @@ ROSCO:
   DISCON:
     TCIPC_GS_n: 12
     TCIPC_GS_WindSpeeds: [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]
-    TCIPC_GS_AzimuthOffsets: [16.4211115111729, 17.8477415584046, 17.6703867079527, 25.2692399113936, 28.6740066604018, 27.8044171907273, 28.1861334454076, 28.8812135958126, 29.6647528218874, 30.5298758920957, 31.4512681506896, 32.428314399426]
-
+    TCIPC_GS_AzimuthOffsets: [0.28660246, 0.31150185, 0.30840643, 0.44103144, 0.50045583, 0.48527863, 0.49194083, 0.50407227, 0.51774761, 0.53284685, 0.54892818, 0.56598086]
     # For it to work properly, we only have hardware saturation, a lower minimum pitch limit (for the IPC in below-rated conditions) and a higher allowable pitch rate.
     IPC_SatMode: 0
     PC_MinPit: -0.35907
