@@ -1,25 +1,25 @@
 general:
-  folder_output: ../../data/optimal_tuning/maxTipDxc_18/
-  fname_output: maxTipDxc_18
+  folder_output: ../../data/optimal_tuning/maxTipDxc_10/
+  fname_output: maxTipDxc_10
 
 design_variables:
   control:
     ps_percent:
       flag: true
-      lower_bound: 0.7
+      lower_bound: 0.6
       upper_bound: 1.0
 
     servo:
       tcipc_control:
         TCIPC_MaxTipDeflection:
           flag: true
-          min: 8.0
+          min: 0.0
           max: 20.0
 
 constraints:
   user:
     - name: aeroelastic.max_TipDxc_towerPassing
-      upper_bound: [18.0]
+      upper_bound: [10.0]
 
 # merit_figure: AEP  # Only uses WISDEM I think.
 merit_figure_user: 
@@ -30,10 +30,10 @@ merit_figure_user:
 driver:
   optimization:
     flag: true
-    tol: 0.1
-    max_iter: 20
+    tol: 0.001
+    max_iter: 75
     solver: "LN_COBYLA"  # COBYLA didn't adhere to the bounds of the design variables for me...
 
 recorder:
   flag: true
-  file_name: log_maxTipDxc_18.sql
+  file_name: log_maxTipDxc_10.sql

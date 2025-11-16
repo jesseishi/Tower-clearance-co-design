@@ -13,7 +13,7 @@ design_variables:
       tcipc_control:
         TCIPC_MaxTipDeflection:
           flag: true
-          min: 8.0
+          min: 0.0
           max: 12.0
 
 merit_figure_user:
