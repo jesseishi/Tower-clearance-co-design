@@ -5,6 +5,4 @@
 slurm-*.out
 
 # Outputs from simulations.
-data/benchmarking
-data/optimal_tuning
-data/co-design
+data/

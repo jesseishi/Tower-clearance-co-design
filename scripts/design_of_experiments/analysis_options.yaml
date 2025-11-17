@@ -1,0 +1,34 @@
+general:
+  folder_output: ../../data/design_of_experiments/test/
+  fname_output: test
+
+design_variables:
+  control:
+    ps_percent:
+      flag: true
+      lower_bound: 0.6
+      upper_bound: 1.0
+
+    servo:
+      tcipc_control:
+        TCIPC_MaxTipDeflection:
+          flag: true
+          min: 0.0
+          max: 20.0
+
+# merit_figure: AEP  # Only uses WISDEM I think.
+merit_figure_user: 
+  name: aeroelastic.AEP
+  ref: 81000000
+  max_flag: true
+
+driver:
+  design_of_experiments:
+    flag: true
+    run_parallel: True
+    generator: Uniform
+    num_samples: 5
+
+recorder:
+  flag: true
+  file_name: log_test.sql
