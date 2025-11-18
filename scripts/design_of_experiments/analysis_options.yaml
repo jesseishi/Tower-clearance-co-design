@@ -1,12 +1,12 @@
 general:
-  folder_output: ../../data/design_of_experiments/test/
-  fname_output: test
+  folder_output: ../../data/design_of_experiments/ps_vs_ipc/
+  fname_output: ps_vs_ipc
 
 design_variables:
   control:
     ps_percent:
       flag: true
-      lower_bound: 0.6
+      lower_bound: 0.5
       upper_bound: 1.0
 
     servo:
@@ -25,10 +25,11 @@ merit_figure_user:
 driver:
   design_of_experiments:
     flag: true
-    run_parallel: True
-    generator: Uniform
-    num_samples: 5
+    run_parallel: true
+    generator: FullFact
+    num_samples: 6
 
 recorder:
   flag: true
-  file_name: log_test.sql
+  file_name: log_ps_vs_ipc.sql
+  includes: ["aeroelastic.*"]  # Just "*" doesn't work due to some non-uniqueness problem.

@@ -1,9 +1,9 @@
 General:
   openfast_configuration:
     use_exe: True
-    FAST_exe: /home/jesse/Projects/Tower-clearance-co-design/src/openfast/install/bin/openfast
-    turbsim_exe: /home/jesse/Projects/Tower-clearance-co-design/src/openfast/install/bin/turbsim
-    path2dll: /home/jesse/Projects/Tower-clearance-co-design/src/ROSCO/rosco/lib/libdiscon.so
+    FAST_exe: /scratch/jhummel/tip_clearance/src/openfast/install/bin/openfast
+    turbsim_exe: /scratch/jhummel/tip_clearance/src/openfast/install/bin/turbsim
+    path2dll: /scratch/jhummel/tip_clearance/src/ROSCO/rosco/lib/libdiscon.so
     # allow_fails: true  # Important for DOE, otherwise we skip FASTLoadCases.compute()?
     # fail_value: 99    # Important for DOE
 
@@ -85,16 +85,11 @@ ROSCO:
 
 DLC_driver:
   DLCs:
-    # - DLC: "1.1"
-    #   n_seeds: 2
-    #   analysis_time: 900.0
-    #   transient_time: 300.0
-    # - DLC: "1.5"
-    #   wind_speed: [10.0]
-    #   analysis_time: 50.0
-    #   transient_time: 300.0
     - DLC: "1.1"
       n_seeds: 2
+      analysis_time: 900.0
+      transient_time: 300.0
+    - DLC: "1.5"
       wind_speed: [10.0]
-      analysis_time: 10.0
-      transient_time: 0.0
+      analysis_time: 50.0
+      transient_time: 300.0

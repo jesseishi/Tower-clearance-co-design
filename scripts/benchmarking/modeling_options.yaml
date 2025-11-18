@@ -4,7 +4,7 @@ General:
     FAST_exe: /scratch/jhummel/tip_clearance/src/openfast/install/bin/openfast
     turbsim_exe: /scratch/jhummel/tip_clearance/src/openfast/install/bin/turbsim
     path2dll: /scratch/jhummel/tip_clearance/src/ROSCO/rosco/lib/libdiscon.so
-    # allow_fails: true  # Important for DOE, otherwise we skip FASTLoadCases.compute()
+    # allow_fails: true  # Important for DOE, otherwise we skip FASTLoadCases.compute()?
     # fail_value: 99    # Important for DOE
 
 WISDEM:
@@ -53,10 +53,10 @@ OpenFAST:
     DrTrDOF: False
     GenDOF: True
     YawDOF: False
-    TwFADOF1: False
-    TwFADOF2: False
-    TwSSDOF1: False
-    TwSSDOF2: False
+    TwFADOF1: True
+    TwFADOF2: True
+    TwSSDOF1: True
+    TwSSDOF2: True
     PtfmSgDOF: False
     PtfmSwDOF: False
     PtfmHvDOF: False
@@ -65,17 +65,18 @@ OpenFAST:
     PtfmYDOF: False
   ServoDyn:
     Ptch_Cntrl: 1
+  InflowWind:
+    RefLength: 240  # Scaling for the changing shear of DLC 1.5.
 
 ROSCO:
   flag: True
   ps_percent: 0.80
-  TCIPC_ControlMode: 1
+  TCIPC_ControlMode: 0
   TCIPC_MaxTipDeflection: 10
   DISCON:
     TCIPC_GS_n: 12
     TCIPC_GS_WindSpeeds: [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]
     TCIPC_GS_AzimuthOffsets: [0.28660246, 0.31150185, 0.30840643, 0.44103144, 0.50045583, 0.48527863, 0.49194083, 0.50407227, 0.51774761, 0.53284685, 0.54892818, 0.56598086]
-
     # For it to work properly, we only have hardware saturation, a lower minimum pitch limit (for the IPC in below-rated conditions) and a higher allowable pitch rate.
     IPC_SatMode: 0
     PC_MinPit: -0.35907
@@ -86,9 +87,9 @@ DLC_driver:
   DLCs:
     - DLC: "1.1"
       n_seeds: 2
-      analysis_time: 10.0
-      transient_time: 0.0
+      analysis_time: 900.0
+      transient_time: 300.0
     - DLC: "1.5"
       wind_speed: [10.0]
-      analysis_time: 10.0
-      transient_time: 0.0
+      analysis_time: 50.0
+      transient_time: 300.0
