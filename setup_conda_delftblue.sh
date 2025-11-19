@@ -45,7 +45,7 @@ conda env update --file environment.yml
 
 # Other dependencies not listed in either environment.yml.
 echo "Installing other dependencies..."
-conda install -y petsc4py=3.22.2 mpi4py pyoptsparse
+conda install -y petsc4py=3.22.2 mpi4py pyoptsparse seaborn pymoo
 
 # Now install ROSCO and WEIS.
 echo "Installing ROSCO package..."
