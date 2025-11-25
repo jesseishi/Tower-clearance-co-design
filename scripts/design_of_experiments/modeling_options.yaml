@@ -74,6 +74,7 @@ ROSCO:
   TCIPC_ControlMode: 1
   TCIPC_MaxTipDeflection: 10
   DISCON:
+    TCIPC_ZeroYawDeflection: 1
     TCIPC_GS_n: 12
     TCIPC_GS_WindSpeeds: [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]
     TCIPC_GS_AzimuthOffsets: [0.28660246, 0.31150185, 0.30840643, 0.44103144, 0.50045583, 0.48527863, 0.49194083, 0.50407227, 0.51774761, 0.53284685, 0.54892818, 0.56598086]
@@ -93,3 +94,9 @@ DLC_driver:
       wind_speed: [10.0]
       analysis_time: 50.0
       transient_time: 300.0
+    # - DLC: "1.1"
+    #   n_seeds: 1
+    #   wind_speed: [10.0]
+    #   analysis_time: 100.0
+    #   transient_time: 0.0
+    #   IEC_WindType: Steady

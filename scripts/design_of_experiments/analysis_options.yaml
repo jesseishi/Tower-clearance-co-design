@@ -1,6 +1,6 @@
 general:
-  folder_output: ../../data/design_of_experiments/ps_vs_ipc/
-  fname_output: ps_vs_ipc
+  folder_output: ../../data/design_of_experiments/ps_vs_ipc_YawToZero/
+  fname_output: ps_vs_ipc_YawToZero
 
 design_variables:
   control:
@@ -31,5 +31,5 @@ driver:
 
 recorder:
   flag: true
-  file_name: log_ps_vs_ipc.sql
+  file_name: log_ps_vs_ipc_YawToZero.sql
   includes: ["aeroelastic.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
