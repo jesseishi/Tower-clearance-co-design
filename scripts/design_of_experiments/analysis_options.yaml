@@ -1,20 +1,26 @@
 general:
-  folder_output: ../../data/design_of_experiments/ps_vs_ipc_YawToZero/
-  fname_output: ps_vs_ipc_YawToZero
+  folder_output: ../../data/design_of_experiments/ps_vs_ipc_harmonics/
+  fname_output: ps_vs_ipc_harmonics
 
 design_variables:
   control:
-    ps_percent:
-      flag: true
-      lower_bound: 0.5
-      upper_bound: 1.0
+    # ps_percent:
+    #   flag: true
+    #   lower_bound: 0.5
+    #   upper_bound: 1.0
 
     servo:
       tcipc_control:
-        TCIPC_MaxTipDeflection:
+        # TCIPC_MaxTipDeflection:
+        #   flag: true
+        #   min: 0.0
+        #   max: 20.0
+        TCIPC_nHarmonics:
           flag: true
-          min: 0.0
-          max: 20.0
+          min: 1
+          max: 5
+        # TCIPC_ZeroYawDeflection:
+        #   flag: true
 
 # merit_figure: AEP  # Only uses WISDEM I think.
 merit_figure_user: 
@@ -27,9 +33,9 @@ driver:
     flag: true
     run_parallel: true
     generator: FullFact
-    num_samples: 6
+    num_samples: 5  # For FullFact, this is not the amount of samples, but amount of levels.
 
 recorder:
   flag: true
-  file_name: log_ps_vs_ipc_YawToZero.sql
+  file_name: log_ps_vs_ipc_harmonics.sql
   includes: ["aeroelastic.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
