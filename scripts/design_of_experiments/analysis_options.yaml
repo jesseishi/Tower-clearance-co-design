@@ -1,6 +1,6 @@
 general:
-  folder_output: ../../data/design_of_experiments/ps_vs_ipc_all_sweep/
-  fname_output: ps_vs_ipc_all_sweep
+  folder_output: ../../data/design_of_experiments/ps_vs_ipc_harmonics_DLC1p5/
+  fname_output: ps_vs_ipc_harmonics_DLC1p5
 
 design_variables:
   control:
@@ -11,18 +11,18 @@ design_variables:
 
     servo:
       tcipc_control:
-        TCIPC_MaxTipDeflection:
-          flag: true
-          min: 0.0
-          max: 20.0
-        # TCIPC_nHarmonics:
+        # TCIPC_MaxTipDeflection:
         #   flag: true
-        #   min: 1
-        #   max: 10
-        TCIPC_ZeroYawDeflection:
+        #   min: 0.0
+        #   max: 20.0
+        TCIPC_nHarmonics:
           flag: true
-          min: 0
-          max: 1
+          min: 1
+          max: 10
+        # TCIPC_ZeroYawDeflection:
+        #   flag: true
+        #   min: 0
+        #   max: 1
 
 # merit_figure: AEP  # Only uses WISDEM I think.
 merit_figure_user: 
@@ -35,9 +35,9 @@ driver:
     flag: true
     run_parallel: true
     generator: FullFact
-    num_samples: 2  # For FullFact, this is not the amount of samples, but amount of levels.
+    num_samples: 10  # For FullFact, this is not the amount of samples, but amount of levels.
 
 recorder:
   flag: true
-  file_name: log_ps_vs_ipc_all_sweep.sql
+  file_name: log_ps_vs_ipc_harmonics_DLC1p5.sql
   includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
