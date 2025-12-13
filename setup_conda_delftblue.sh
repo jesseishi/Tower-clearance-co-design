@@ -45,7 +45,12 @@ conda env update --file environment.yml
 
 # Other dependencies not listed in either environment.yml.
 echo "Installing other dependencies..."
-conda install -y petsc4py=3.22.2 mpi4py pyoptsparse seaborn pymoo cmcrameri
+conda install -y petsc4py=3.22.2 mpi4py pyoptsparse
+
+# And some of the packages that I'm using in the analysis scripts.
+conda install -y seaborn pymoo cmcrameri nbstripout
+nbstripout --install  # Clears notebook outputs when committing them to git.
+
 
 # Now install ROSCO and WEIS.
 echo "Installing ROSCO package..."

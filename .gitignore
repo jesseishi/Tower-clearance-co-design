@@ -1,8 +1,15 @@
 # IDE settings.
 .vscode/
+.github/
 
 # Slurm outputs.
 slurm-*.out
 
 # Outputs from simulations.
 data/
+
+# Figures.
+scripts/**/figures
+
+# Python stuff.
+__pycache__

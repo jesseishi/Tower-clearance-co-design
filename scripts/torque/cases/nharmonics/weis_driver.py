@@ -1,8 +1,8 @@
 import os
 import sys
+
 from mpi4py import MPI
 from weis import weis_main
-
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 wt_input = os.path.join(this_dir, "../../data/turbine_models/IEA-15-240-RWT.yaml")

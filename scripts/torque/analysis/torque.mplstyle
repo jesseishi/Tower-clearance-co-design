@@ -1,0 +1,18 @@
+# Custom matplotlib style for paper figures
+# Based on 455pt text width with golden ratio aspect
+
+# Font settings
+font.family: serif
+font.serif: Latin Modern Roman
+font.size: 10
+text.usetex: False
+
+# Figure size (golden ratio: 5.69 x 3.52 inches)
+figure.figsize: 5.69, 3.52
+
+# PDF/PostScript settings (embedded fonts)
+pdf.fonttype: 42
+ps.fonttype: 42
+
+# Default colormap
+image.cmap: cmc.batlow

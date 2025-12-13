@@ -1,6 +1,6 @@
 general:
-  folder_output: ../../data/design_of_experiments/ps_vs_ipc_harmonics_DLC1p5/
-  fname_output: ps_vs_ipc_harmonics_DLC1p5
+  folder_output: ../../data/design_of_experiments/ps_vs_ipc_harmonics2/
+  fname_output: ps_vs_ipc_harmonics2
 
 design_variables:
   control:
@@ -17,8 +17,8 @@ design_variables:
         #   max: 20.0
         TCIPC_nHarmonics:
           flag: true
-          min: 1
-          max: 10
+          min: 0
+          max: 9
         # TCIPC_ZeroYawDeflection:
         #   flag: true
         #   min: 0
@@ -39,5 +39,5 @@ driver:
 
 recorder:
   flag: true
-  file_name: log_ps_vs_ipc_harmonics_DLC1p5.sql
+  file_name: log_ps_vs_ipc_harmonics2.sql
   includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
