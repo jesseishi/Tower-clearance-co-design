@@ -14,5 +14,9 @@ figure.figsize: 5.69, 3.52
 pdf.fonttype: 42
 ps.fonttype: 42
 
+# Save figure settings (minimize whitespace)
+savefig.bbox: tight
+savefig.pad_inches: 0.0
+
 # Default colormap
 image.cmap: cmc.batlow

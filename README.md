@@ -15,4 +15,7 @@ citation), we have made some utility shell scripts:
    `tip_clearance` conda environment. To run it, you first need to give it
    execution permissions with `chmod +x setup_conda.sh`, and then run `./setup_conda.sh`.
 
+## Notes
 
+- When running on WSL with mpi. Setting `export OMP_NUM_THREADS=1` can help avoid issues
+  with WSL. This fixed issues for me when running `mpiexec -n 8 python weis_driver.py`

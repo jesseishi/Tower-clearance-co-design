@@ -70,6 +70,7 @@ OpenFAST:
 
 ROSCO:
   flag: True
+  LoggingLevel: 2
   ps_percent: 0.80
   TCIPC_ControlMode: 1
   TCIPC_MaxTipDeflection: 20

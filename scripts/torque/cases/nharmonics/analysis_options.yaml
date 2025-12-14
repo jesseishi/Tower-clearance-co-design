@@ -1,6 +1,6 @@
 general:
-  folder_output: ../../data/design_of_experiments/ps_vs_ipc_harmonics2/
-  fname_output: ps_vs_ipc_harmonics2
+  folder_output: ../../../../data/torque/harmonics/
+  fname_output: harmonics
 
 design_variables:
   control:
@@ -39,5 +39,5 @@ driver:
 
 recorder:
   flag: true
-  file_name: log_ps_vs_ipc_harmonics2.sql
+  file_name: log_harmonics.sql
   includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
