@@ -4,8 +4,6 @@ General:
     FAST_exe: /home/jesse/Projects/Tower-clearance-co-design/src/openfast/install/bin/openfast
     turbsim_exe: /home/jesse/Projects/Tower-clearance-co-design/src/openfast/install/bin/turbsim
     path2dll: /home/jesse/Projects/Tower-clearance-co-design/src/ROSCO/rosco/lib/libdiscon.so
-    # allow_fails: true  # Important for DOE, otherwise we skip FASTLoadCases.compute()?
-    # fail_value: 99    # Important for DOE
 
 WISDEM:
     RotorSE:

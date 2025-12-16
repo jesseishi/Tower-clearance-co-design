@@ -8,7 +8,7 @@ design_variables:
       tcipc_control:
         TCIPC_MaxTipDeflection:
           flag: true
-          min: 10.0
+          min: 11.0
           max: 20.0
         TCIPC_ZeroYawDeflection:
           flag: true

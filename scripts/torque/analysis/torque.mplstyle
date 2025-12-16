@@ -1,5 +1,4 @@
-# Custom matplotlib style for paper figures
-# Based on 455pt text width with golden ratio aspect
+# Custom matplotlib style for Torque 2026
 
 # Font settings
 font.family: serif
@@ -7,8 +6,15 @@ font.serif: Latin Modern Roman
 font.size: 10
 text.usetex: False
 
-# Figure size (golden ratio: 5.69 x 3.52 inches)
-figure.figsize: 5.69, 3.52
+# Figure size (textwidth is 6.3228 in, with golden ratio)
+figure.figsize: 6.3, 3.8936
+
+# Axes settings
+axes.axisbelow: True
+axes.prop_cycle: cycler('color', ['000000', '26576D', '6DC29B'])
+
+# Legend settings
+legend.framealpha: 0.9
 
 # PDF/PostScript settings (embedded fonts)
 pdf.fonttype: 42
