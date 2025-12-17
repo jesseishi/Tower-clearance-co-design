@@ -25,4 +25,4 @@ savefig.bbox: tight
 savefig.pad_inches: 0.0
 
 # Default colormap
-image.cmap: cmc.batlow
+image.cmap: viridis
