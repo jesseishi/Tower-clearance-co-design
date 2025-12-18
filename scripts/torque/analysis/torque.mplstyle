@@ -11,6 +11,7 @@ figure.figsize: 6.3, 3.8936
 
 # Axes settings
 axes.axisbelow: True
+axes.titlesize: 10
 axes.prop_cycle: cycler('color', ['000000', '26576D', '6DC29B'])
 
 # Legend settings
