@@ -1,0 +1,35 @@
+general:
+  folder_output: ../../../../data/torque/ps_vs_tcipc_we0/
+  fname_output: ps_vs_tcipc_we0
+
+design_variables:
+  control:
+    ps_percent:
+      flag: true
+      lower_bound: 0.5
+      upper_bound: 1.0
+
+    servo:
+      tcipc_control:
+        TCIPC_MaxTipDeflection:
+          flag: true
+          min: 0.0
+          max: 20.0
+
+# merit_figure: AEP  # Only uses WISDEM I think.
+merit_figure_user: 
+  name: aeroelastic.AEP
+  ref: 81000000
+  max_flag: true
+
+driver:
+  design_of_experiments:
+    flag: true
+    run_parallel: true
+    generator: FullFact
+    num_samples: 6  # For FullFact, this is not the amount of samples, but amount of levels.
+
+recorder:
+  flag: true
+  file_name: log_ps_vs_tcipc_we0.sql
+  includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
