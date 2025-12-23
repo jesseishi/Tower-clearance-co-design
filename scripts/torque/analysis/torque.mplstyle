@@ -7,7 +7,8 @@ font.size: 10
 text.usetex: False
 
 # Figure size (textwidth is 6.3228 in, with golden ratio)
-figure.figsize: 6.3, 3.8936
+# Golden ratio would be 3.8936 but that was a little too big.
+figure.figsize: 6.3, 3.0
 
 # Axes settings
 axes.axisbelow: True
