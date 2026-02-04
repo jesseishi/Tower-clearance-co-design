@@ -5,7 +5,7 @@ General:
     turbsim_exe: /scratch/jhummel/tip_clearance/src/openfast/install/bin/turbsim
     path2dll: /scratch/jhummel/tip_clearance/src/ROSCO/rosco/lib/libdiscon.so
 
-    # Save space on my local PC. Can be turned on on the cluster.
+    # Can be used to save space.
     save_timeseries: True
     save_iterations: True
 
@@ -74,7 +74,7 @@ ROSCO:
   flag: True
   ps_percent: 0.80
   TCIPC_ControlMode: 1
-  TCIPC_MaxTipDeflection: 20
+  TCIPC_MaxTipDeflection: 10
   TCIPC_nHarmonics: 2
   TCIPC_ZeroYawDeflection: 0
   DISCON:
@@ -89,26 +89,27 @@ ROSCO:
 
 DLC_driver:
   DLCs:
+    - DLC: "AEP"
+      n_seeds: 1
+      analysis_time: 900.0
+      transient_time: 300.0
     - DLC: "1.1"
       n_seeds: 1
       analysis_time: 900.0
       transient_time: 300.0
-    - DLC: "1.5"
-      wind_speed: [10.0]
+    - DLC: "1.2"
+      n_seeds: 1
+      analysis_time: 900.0
+      transient_time: 300.0
+    - DLC: "1.3"
+      n_seeds: 1
+      analysis_time: 900.0
+      transient_time: 300.0
+    - DLC: "1.4"
+      # wind_speed: [10.59]
       analysis_time: 50.0
       transient_time: 300.0
-    # - DLC: "1.1"
-    #   n_seeds: 1
-    # wind_speed: [10.0]
-    # analysis_time: 100.0
-    # transient_time: 300.0
-    # IEC_WindType: Steady
-    # - DLC: "1.1"
-    #   n_seeds: 1
-    #   wind_speed: [10.0]
-    #   analysis_time: 600.0
-    #   transient_time: 300.0
-    # - DLC: "1.5"
-    #   wind_speed: [10.0]
-    #   analysis_time: 25.0
-    #   transient_time: 300.0
+    - DLC: "1.5"
+      # wind_speed: [10.59]
+      analysis_time: 50.0
+      transient_time: 300.0

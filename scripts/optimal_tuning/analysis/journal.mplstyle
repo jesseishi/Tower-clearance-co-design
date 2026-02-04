@@ -1,0 +1,29 @@
+# Custom matplotlib style for Torque 2026
+
+# Font settings
+font.family: serif
+font.serif: Latin Modern Roman
+font.size: 10
+text.usetex: False
+
+# Figure size (textwidth is 6.3228 in, with golden ratio)
+figure.figsize: 6.3, 3.8936
+
+# Axes settings
+axes.axisbelow: True
+axes.prop_cycle: cycler('color', ['000000', '26576D', '6DC29B'])
+
+# Legend settings
+legend.framealpha: 0.9
+
+# PDF/PostScript settings (embedded fonts)
+pdf.fonttype: 42
+ps.fonttype: 42
+
+# Save figure settings (minimize whitespace)
+figure.constrained_layout.use: True
+savefig.bbox: tight
+savefig.pad_inches: 0.0
+
+# Default colormap
+image.cmap: viridis

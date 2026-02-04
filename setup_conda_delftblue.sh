@@ -28,7 +28,7 @@ if conda env list | grep -q "^tip_clearance "; then
     conda activate tip_clearance
 else
     echo "Creating new environment tip_clearance..."
-    conda create -y --name tip_clearance
+    conda create -y --name tip_clearance python=3.13
     conda activate tip_clearance
 fi
 
