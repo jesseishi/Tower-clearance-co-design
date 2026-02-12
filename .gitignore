@@ -13,3 +13,6 @@ scripts/**/figures
 
 # Python stuff.
 __pycache__
+
+# My (or your) personal notes.
+NOTES.md

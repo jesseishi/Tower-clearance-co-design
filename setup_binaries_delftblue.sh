@@ -39,7 +39,6 @@ cmake ..
 make -j8
 make install
 
-
 # Test OpenFAST.
 echo ""
 echo "Testing..."
