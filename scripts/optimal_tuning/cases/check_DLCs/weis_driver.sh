@@ -1,13 +1,19 @@
 #!/bin/sh
 #
 #SBATCH --job-name="weis" 
-#SBATCH --partition=compute-p1
-#SBATCH --time=03:59:00 
+#SBATCH --partition=memory
+#SBATCH --time=24:00:00 
 #SBATCH --ntasks=2
-#SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=2GB
+#SBATCH --cpus-per-task=2
+#SBATCH --mem-per-cpu=15GB
 #SBATCH --account=innovation
 #SBATCH --mail-type=ALL
+
+# TODO: Check how to set ntasks and cpus-per-task for this type of simulation
+# (many simulations for 1 setting). On the other hand, I needed the special
+# memory partition because I got an out-of-memory error with 8 GB available. Ah
+# yeah, if the simulations are parallel on 64 cores I also get more memory for
+# postprocessing (which happens on 1 core I think).
 
 # Load necessary modules. The intel module is needed to run OpenFAST
 # (libmkl_gf_lp64.so.2).

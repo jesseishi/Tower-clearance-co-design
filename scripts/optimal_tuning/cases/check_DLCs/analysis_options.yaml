@@ -1,8 +1,8 @@
 general:
-  folder_output: ../../../../data/optimal_tuning/check_DLCs/
-  fname_output: check_DLCs
+  folder_output: ../../../../data/optimal_tuning/check_DLCs2/
+  fname_output: check_DLCs2
 
 recorder:
   flag: true
-  file_name: log_check_DLCs.sql
+  file_name: log_check_DLCs2.sql
   includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
