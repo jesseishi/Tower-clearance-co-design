@@ -1,6 +1,6 @@
 general:
-  folder_output: ../../../../data/torque/ps_vs_tcipc/
-  fname_output: ps_vs_tcipc
+  folder_output: ../../../data/optimal_tuning/parameter_sweep/
+  fname_output: parameter_sweep
 
 design_variables:
   control:
@@ -31,5 +31,5 @@ driver:
 
 recorder:
   flag: true
-  file_name: log_ps_vs_tcipc.sql
+  file_name: log.sql
   includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
