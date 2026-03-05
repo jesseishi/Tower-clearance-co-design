@@ -1,6 +1,6 @@
 general:
-  folder_output: ../../../data/optimal_tuning/parameter_sweep/
-  fname_output: parameter_sweep
+  folder_output: ../../../../data/optimal_tuning/parameter_sweep/
+  fname_output: ps_vs_ipc_zero_yaw
 
 design_variables:
   control:
@@ -31,5 +31,5 @@ driver:
 
 recorder:
   flag: true
-  file_name: log.sql
+  file_name: ps_vs_ipc_zero_yaw.sql
   includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
