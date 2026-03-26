@@ -16,7 +16,6 @@ design_variables:
           min: 0.0
           max: 20.0
 
-# merit_figure: AEP  # Only uses WISDEM I think.
 merit_figure_user: 
   name: aeroelastic.AEP
   ref: 81000000
