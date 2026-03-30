@@ -6,15 +6,17 @@ font.serif: Latin Modern Roman
 font.size: 10
 text.usetex: False
 
-# Figure size (textwidth is 6.3228 in, with golden ratio)
-figure.figsize: 6.3, 3.8936
+# Figure size (textwidth is 6.84 in, with golden ratio)
+figure.figsize: 6.84, 4.23
 
 # Axes settings
 axes.axisbelow: True
 axes.prop_cycle: cycler('color', ['000000', '26576D', '6DC29B'])
+axes.grid: True
 
 # Legend settings
 legend.framealpha: 0.9
+legend.loc: "upper right"
 
 # PDF/PostScript settings (embedded fonts)
 pdf.fonttype: 42
