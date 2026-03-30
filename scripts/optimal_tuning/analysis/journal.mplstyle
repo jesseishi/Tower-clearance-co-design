@@ -6,8 +6,8 @@ font.serif: Latin Modern Roman
 font.size: 10
 text.usetex: False
 
-# Figure size (textwidth is 6.84 in, with golden ratio)
-figure.figsize: 6.84, 4.23
+# Figure size
+figure.figsize: 6.84, 3.42
 
 # Axes settings
 axes.axisbelow: True
