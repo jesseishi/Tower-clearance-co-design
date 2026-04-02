@@ -6,8 +6,8 @@ from weis import weis_main
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 wt_input = os.path.join(this_dir, "../../../../data/turbine_models/IEA-15-240-RWT.yaml")
-modeling_options = os.path.join(this_dir, "modeling_options_zero_yaw.yaml")
-analysis_options = os.path.join(this_dir, "analysis_options_zero_yaw.yaml")
+modeling_options = os.path.join(this_dir, "modeling_options_baseline.yaml")
+analysis_options = os.path.join(this_dir, "analysis_options_baseline.yaml")
 
 # Works for simple runs or optimizations, not design_of_experiments.
 # Also reduces the amount of DLC's so you cannot test whether you have allocated the

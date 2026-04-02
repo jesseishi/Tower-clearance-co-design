@@ -1,12 +1,12 @@
 #!/bin/sh
 #
 #SBATCH --job-name="weis" 
-#SBATCH --partition=compute-p1
-#SBATCH --time=48:00:00
+#SBATCH --partition=compute-p2
+#SBATCH --time=1:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=36
 #SBATCH --mem-per-cpu=2GB
-#SBATCH --account=research-me-dcsc
+#SBATCH --account=innovation
 #SBATCH --mail-type=ALL
 
 # Load necessary modules. The intel module is needed to run OpenFAST
@@ -30,6 +30,6 @@ export I_MPI_PMI_LIBRARY=/cm/shared/apps/slurm/current/lib64/libpmi2.so
 # And run in the conda environment.
 conda activate tip_clearance
 echo "Python executable: $(which python)."
-echo "Running weis_driver_zero_yaw.py now..."
-srun python weis_driver_zero_yaw.py
+echo "Running weis_driver_baseline.py now..."
+srun python weis_driver_baseline.py
 conda deactivate
