@@ -16,6 +16,11 @@ design_variables:
           min: 0.0
           max: 20.0
 
+        TCIPC_MaxPitchAmplitude:
+          flag: true
+          min: 0.0
+          max: 0.0873
+
 merit_figure_user: 
   name: aeroelastic.AEP
   ref: 81000000

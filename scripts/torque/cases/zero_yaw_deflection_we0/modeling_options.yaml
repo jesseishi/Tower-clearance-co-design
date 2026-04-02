@@ -77,6 +77,7 @@ ROSCO:
   TCIPC_MaxTipDeflection: 20
   TCIPC_nHarmonics: 2
   TCIPC_ZeroYawDeflection: 1
+  TCIPC_MaxPitchAmplitude: 0.0873
   WE_Mode: 0  # Do not use the wind speed estimator to avoid the bias that TCIPC introduces (which actually makes it more accurate and produces more power).
   DISCON:
     TCIPC_GS_n: 12
