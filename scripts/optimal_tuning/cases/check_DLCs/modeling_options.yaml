@@ -37,7 +37,7 @@ WISDEM:
 OpenFAST:
   flag: True
   simulation:
-    DT: 0.025
+    DT: 0.020
     NumCrctn: 0
     CompElast: 1
     CompInflow: 1

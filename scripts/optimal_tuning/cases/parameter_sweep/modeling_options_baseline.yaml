@@ -36,7 +36,7 @@ WISDEM:
 OpenFAST:
   flag: True
   simulation:
-    DT: 0.025
+    DT: 0.020
     NumCrctn: 0
     CompElast: 1
     CompInflow: 1
@@ -101,7 +101,7 @@ DLC_driver:
     - DLC: "1.4"
       n_azimuth: 4
       wind_speed: [10.59]
-      analysis_time: 50.0
+      analysis_time: 100.0
       transient_time: 150.0
     - DLC: "1.5"
       n_azimuth: 4
