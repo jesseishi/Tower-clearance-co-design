@@ -1,0 +1,29 @@
+general:
+  folder_output: ../../../../data/optimal_tuning/check_AEP/
+  fname_output: check_AEP
+
+design_variables:
+  control:
+    servo:
+      tcipc_control:
+        TCIPC_MaxTipDeflection:
+          flag: true
+          min: 0.0
+          max: 30.0
+
+merit_figure_user: 
+  name: aeroelastic.AEP
+  ref: 81000000
+  max_flag: true
+
+driver:
+  design_of_experiments:
+    flag: true
+    run_parallel: true
+    generator: FullFact
+    num_samples: 2  # For FullFact, this is not the amount of samples, but amount of levels.
+
+recorder:
+  flag: true
+  file_name: log_check_AEP.sql
+  includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.

@@ -1,10 +1,10 @@
 #!/bin/sh
 #
 #SBATCH --job-name="weis" 
-#SBATCH --partition=memory
-#SBATCH --time=08:00:00 
+#SBATCH --partition=compute-p1
+#SBATCH --time=04:00:00 
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=48
+#SBATCH --cpus-per-task=24
 #SBATCH --mem-per-cpu=2GB
 #SBATCH --account=innovation
 #SBATCH --mail-type=ALL
