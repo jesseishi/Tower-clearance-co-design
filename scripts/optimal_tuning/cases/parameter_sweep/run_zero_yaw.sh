@@ -1,12 +1,12 @@
 #!/bin/sh
 #
 #SBATCH --job-name="weis" 
-#SBATCH --partition=compute-p1
-#SBATCH --time=48:00:00
+#SBATCH --partition=compute-p2
+#SBATCH --time=24:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=36
+#SBATCH --cpus-per-task=48
 #SBATCH --mem-per-cpu=2GB
-#SBATCH --account=research-me-dcsc
+#SBATCH --account=innovation
 #SBATCH --mail-type=ALL
 
 # Load necessary modules. The intel module is needed to run OpenFAST

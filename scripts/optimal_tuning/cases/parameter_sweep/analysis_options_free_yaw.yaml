@@ -6,7 +6,7 @@ design_variables:
   control:
     ps_percent:
       flag: true
-      lower_bound: 0.5
+      lower_bound: 0.6
       upper_bound: 1.0
 
     servo:
@@ -14,12 +14,12 @@ design_variables:
         TCIPC_MaxTipDeflection:
           flag: true
           min: 0.0
-          max: 20.0
+          max: 30.0
 
         TCIPC_MaxPitchAmplitude:
           flag: true
           min: 0.0
-          max: 0.0873
+          max: 0.06981317007977318
 
 merit_figure_user: 
   name: aeroelastic.AEP
@@ -31,7 +31,7 @@ driver:
     flag: true
     run_parallel: true
     generator: FullFact
-    num_samples: 6  # For FullFact, this is not the amount of samples, but amount of levels.
+    num_samples: 5  # For FullFact, this is not the amount of samples, but amount of levels.
 
 recorder:
   flag: true
