@@ -1,6 +1,6 @@
 general:
-  folder_output: ../../../../data/optimal_tuning/check_AEP/
-  fname_output: check_AEP
+  folder_output: ../../../../data/optimal_tuning/check_AEP6/
+  fname_output: check_AEP6
 
 design_variables:
   control:
@@ -25,5 +25,5 @@ driver:
 
 recorder:
   flag: true
-  file_name: log_check_AEP.sql
+  file_name: log_check_AEP6.sql
   includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.

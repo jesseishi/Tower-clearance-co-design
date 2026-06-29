@@ -72,6 +72,7 @@ OpenFAST:
 ROSCO:
   flag: True
   ps_percent: 0.80
+  VS_ControlMode: 1  # 1 = k*Omega^2 controller, which doesn't have a wind speed estimate bias for TCIPC.
   TCIPC_ControlMode: 0
   TCIPC_MaxTipDeflection: 20
   TCIPC_nHarmonics: 2

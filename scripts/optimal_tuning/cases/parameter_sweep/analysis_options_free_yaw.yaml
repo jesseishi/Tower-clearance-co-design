@@ -1,6 +1,6 @@
 general:
-  folder_output: ../../../../data/optimal_tuning/parameter_sweep/
-  fname_output: ps_vs_ipc_free_yaw
+  folder_output: ../../../../data/optimal_tuning/ps_vs_ipc_free_yaw/
+  fname_output: ps_vs_ipc_free_yaw_kw2
 
 design_variables:
   control:
@@ -14,12 +14,12 @@ design_variables:
         TCIPC_MaxTipDeflection:
           flag: true
           min: 0.0
-          max: 30.0
+          max: 25.0
 
-        TCIPC_MaxPitchAmplitude:
-          flag: true
-          min: 0.0
-          max: 0.06981317007977318
+        # TCIPC_MaxPitchAmplitude:
+        #   flag: true
+        #   min: 0.0
+        #   max: 0.06981317007977318
 
 merit_figure_user: 
   name: aeroelastic.AEP
@@ -31,9 +31,9 @@ driver:
     flag: true
     run_parallel: true
     generator: FullFact
-    num_samples: 5  # For FullFact, this is not the amount of samples, but amount of levels.
+    num_samples: 6  # For FullFact, this is not the amount of samples, but amount of levels.
 
 recorder:
   flag: true
-  file_name: ps_vs_ipc_free_yaw.sql
+  file_name: ps_vs_ipc_free_yaw_kw2.sql
   includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.

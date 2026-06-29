@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-#SBATCH --job-name="weis" 
+#SBATCH --job-name="zero yaw" 
 #SBATCH --partition=compute-p2
 #SBATCH --time=24:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=48
+#SBATCH --cpus-per-task=24
 #SBATCH --mem-per-cpu=2GB
 #SBATCH --account=innovation
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=END
 
 # Load necessary modules. The intel module is needed to run OpenFAST
 # (libmkl_gf_lp64.so.2).

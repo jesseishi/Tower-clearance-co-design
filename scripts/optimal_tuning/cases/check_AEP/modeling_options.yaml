@@ -74,6 +74,8 @@ ROSCO:
   flag: True
   LoggingLevel: 2
   ps_percent: 0.80
+  VS_ControlMode: 4  # 1 = k*Omega^2 controller, which doesn't have a wind speed estimate bias for TCIPC, 4 = Torque-based TSR tracking.
+  WE_Mode: 2  # 1 = Immersion and invariance estimator.
   TCIPC_ControlMode: 1
   TCIPC_MaxTipDeflection: 10
   TCIPC_nHarmonics: 2
@@ -94,5 +96,7 @@ DLC_driver:
   DLCs:
     - DLC: "1.1"
       n_seeds: 1
+      wind_speed: [7.0, 10.59, 15.0]
       analysis_time: 600.0
       transient_time: 150.0
+      # IEC_WindType: Steady

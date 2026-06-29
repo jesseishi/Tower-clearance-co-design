@@ -72,6 +72,8 @@ OpenFAST:
 ROSCO:
   flag: True
   ps_percent: 0.80
+  VS_ControlMode: 1  # 1 = k*Omega^2 controller, which doesn't have a wind speed estimate bias for TCIPC, 2 = WSE TSR Tracking, 4 = Torque-based TSR tracking.
+  WE_Mode: 0  # 0 = from OpenFAST, 1 = Immersion and invariance estimator.  
   TCIPC_ControlMode: 1
   TCIPC_MaxTipDeflection: 0
   TCIPC_nHarmonics: 2
@@ -93,19 +95,19 @@ DLC_driver:
     - DLC: "1.1"
       n_seeds: 6
       analysis_time: 600.0
-      transient_time: 150.0
+      transient_time: 200.0
     - DLC: "1.3"
       n_seeds: 6
       wind_speed: [10.59]
       analysis_time: 600.0
-      transient_time: 150.0
+      transient_time: 200.0
     - DLC: "1.4"
-      n_azimuth: 4
+      n_azimuth: 6
       wind_speed: [10.59]
-      analysis_time: 50.0
-      transient_time: 150.0
+      analysis_time: 100.0
+      transient_time: 200.0
     - DLC: "1.5"
-      n_azimuth: 4
+      n_azimuth: 6
       wind_speed: [10.59]
-      analysis_time: 50.0
-      transient_time: 150.0
+      analysis_time: 100.0
+      transient_time: 200.0

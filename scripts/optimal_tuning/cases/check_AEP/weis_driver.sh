@@ -2,9 +2,9 @@
 #
 #SBATCH --job-name="weis" 
 #SBATCH --partition=compute-p1
-#SBATCH --time=04:00:00 
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=24
+#SBATCH --time=01:00:00 
+#SBATCH --ntasks=2
+#SBATCH --cpus-per-task=4
 #SBATCH --mem-per-cpu=2GB
 #SBATCH --account=innovation
 #SBATCH --mail-type=ALL
