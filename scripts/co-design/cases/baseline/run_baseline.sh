@@ -2,12 +2,12 @@
 #
 #SBATCH --job-name="baseline" 
 #SBATCH --partition=compute-p1
-#SBATCH --time=01:00:00 
-#SBATCH --ntasks=12
+#SBATCH --time=16:00:00 
+#SBATCH --ntasks=13
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=2GB
 #SBATCH --account=innovation
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=END
 
 # TODO: Check how to set ntasks and cpus-per-task for this type of simulation
 # (many simulations for 1 setting). On the other hand, I needed the special

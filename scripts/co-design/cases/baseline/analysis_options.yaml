@@ -17,12 +17,12 @@ design_variables:
     cone:  # default = 0.06981317007977318 rad = 4 deg
       flag: true
       lower_bound: 0.0
-      upper_bound: 30.0
+      upper_bound: 0.5235987756  # 0.5235987756 rad = 30 deg
   drivetrain:
     uptilt:  # default = 0.10471975511965977 = 6 deg
       flag: true
       lower_bound: 0.0
-      upper_bound: 30.0
+      upper_bound: 0.5235987756  # 0.5235987756 rad = 30 deg
     overhang:  # default = 12.0313
       flag: true
       lower_bound: 0.1
@@ -35,23 +35,23 @@ merit_figure_user:
     
 constraints:
   user:
-    - name: max_eff_TipDxc_towerPassing
+    - name: aeroelastic.max_eff_TipDxc_towerPassing
       lower_bound: [0.0]
       upper_bound: [17.120584300491835]
       ref: [17.120584300491835]
-    - name: max_eff_RootMyb
+    - name: aeroelastic.max_eff_RootMyb
       lower_bound: [0.0]
       upper_bound: [104697.29296875]
       ref: [104697.29296875]
-    - name: max_eff_TwrBsMyt
+    - name: aeroelastic.max_eff_TwrBsMyt
       lower_bound: [0.0]
       upper_bound: [356416.7864583333]
       ref: [356416.7864583333]
-    - name: DEL_TwrBsMyt
+    - name: aeroelastic.DEL_TwrBsMyt
       lower_bound: [0.0]
       upper_bound: [49976.581934041016]
       ref: [49976.581934041016]
-    - name: DEL_RootMyb
+    - name: aeroelastic.DEL_RootMyb
       lower_bound: [0.0]
       upper_bound: [22115.983753505523]
       ref: [22115.983753505523]
@@ -59,7 +59,7 @@ constraints:
 driver:
   optimization:
     flag: true
-    max_iter: 2
+    max_iter: 80
     solver: COBYLA
 
 

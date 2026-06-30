@@ -94,9 +94,9 @@ ROSCO:
 DLC_driver:
   DLCs:
     - DLC: "1.1"
-      n_seeds: 6
-      analysis_time: 10.0
-      transient_time: 10.0
+      n_seeds: 1
+      analysis_time: 600.0
+      transient_time: 200.0
     # - DLC: "1.1"
     #   n_seeds: 6
     #   analysis_time: 600.0
