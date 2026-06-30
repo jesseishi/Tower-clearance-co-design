@@ -1,19 +1,13 @@
 #!/bin/sh
 #
 #SBATCH --job-name="reference" 
-#SBATCH --partition=compute-p1
-#SBATCH --time=01:00:00 
+#SBATCH --partition=compute-p2
+#SBATCH --time=12:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=24
+#SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=2GB
 #SBATCH --account=innovation
-#SBATCH --mail-type=ALL
-
-# TODO: Check how to set ntasks and cpus-per-task for this type of simulation
-# (many simulations for 1 setting). On the other hand, I needed the special
-# memory partition because I got an out-of-memory error with 8 GB available. Ah
-# yeah, if the simulations are parallel on 64 cores I also get more memory for
-# postprocessing (which happens on 1 core I think).
+#SBATCH --mail-type=END
 
 # Load necessary modules. The intel module is needed to run OpenFAST
 # (libmkl_gf_lp64.so.2).
@@ -24,6 +18,11 @@ module load miniconda3
 # If python buffers print statements it becomes a lot harder to debug. So let's
 # not allow buffering for now.
 export PYTHONUNBUFFERED=1
+
+# OpenMDAO disables MPI when there is only 1 rank (ntasks=1), even though the
+# DOE code path needs it to reach the multiprocessing-based OpenFAST
+# parallelization. Force MPI to stay enabled.
+export OPENMDAO_USE_MPI=0
 
 # See: https://doc.dhpc.tudelft.nl/delftblue/Slurm-scheduler/#intel-mpi-job
 export I_MPI_PMI_LIBRARY=/cm/shared/apps/slurm/current/lib64/libpmi2.so

@@ -4,5 +4,5 @@ general:
 
 recorder:
   flag: true
-  file_name: log_reference.sql
+  file_name: reference.sql
   includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
