@@ -1,0 +1,69 @@
+general:
+  folder_output: ../../../../data/co-design/baseline/
+  fname_output: baseline
+
+design_variables:
+  control:
+    # servo:
+    #   TCIPC_MaxTipDeflection:
+    #     flag: true
+    #     min: 0.0
+    #     max: 25.0
+    ps_percent:  # default = 0.8
+      flag: true
+      lower_bound: 0.6
+      upper_bound: 1.0
+  hub:
+    cone:  # default = 0.06981317007977318 rad = 4 deg
+      flag: true
+      lower_bound: 0.0
+      upper_bound: 30.0
+  drivetrain:
+    uptilt:  # default = 0.10471975511965977 = 6 deg
+      flag: true
+      lower_bound: 0.0
+      upper_bound: 30.0
+    overhang:  # default = 12.0313
+      flag: true
+      lower_bound: 0.1
+      upper_bound: 30.0
+
+merit_figure_user: 
+  name: aeroelastic.AEP
+  ref: 82108621.30139959
+  max_flag: true
+    
+constraints:
+  user:
+    - name: max_eff_TipDxc_towerPassing
+      lower_bound: [0.0]
+      upper_bound: [17.120584300491835]
+      ref: [17.120584300491835]
+    - name: max_eff_RootMyb
+      lower_bound: [0.0]
+      upper_bound: [104697.29296875]
+      ref: [104697.29296875]
+    - name: max_eff_TwrBsMyt
+      lower_bound: [0.0]
+      upper_bound: [356416.7864583333]
+      ref: [356416.7864583333]
+    - name: DEL_TwrBsMyt
+      lower_bound: [0.0]
+      upper_bound: [49976.581934041016]
+      ref: [49976.581934041016]
+    - name: DEL_RootMyb
+      lower_bound: [0.0]
+      upper_bound: [22115.983753505523]
+      ref: [22115.983753505523]
+
+driver:
+  optimization:
+    flag: true
+    max_iter: 2
+    solver: COBYLA
+
+
+recorder:
+  flag: true
+  file_name: baseline.sql
+  includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
