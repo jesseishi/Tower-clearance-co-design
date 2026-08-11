@@ -1,14 +1,15 @@
 general:
-  folder_output: ../../../../data/co-design/baseline/
-  fname_output: baseline
+  folder_output: ../../../../data/co-design/zero_yaw/
+  fname_output: zero_yaw
 
 design_variables:
   control:
-    # servo:
-    #   TCIPC_MaxTipDeflection:
-    #     flag: true
-    #     min: 0.0
-    #     max: 25.0
+    servo:
+      tcipc_control:
+        TCIPC_MaxTipDeflection:
+          flag: true
+          min: 0.0
+          max: 25.0
     ps_percent:  # default = 0.8
       flag: true
       lower_bound: 0.6
@@ -32,7 +33,7 @@ merit_figure_user:
   name: aeroelastic.AEP
   ref: 82108621.30139959
   max_flag: true
-    
+
 constraints:
   openfast_failed:
     flag: true
@@ -61,11 +62,11 @@ constraints:
 driver:
   optimization:
     flag: true
-    max_iter: 50
+    max_iter: 100
     solver: LN_COBYLA  # LN_COBYLA (compared to COBYLA) has better bounds constraints and has better convergence/termination according to the NLOpt website.
 
 
 recorder:
   flag: true
-  file_name: baseline.sql
+  file_name: zero_yaw.sql
   includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.

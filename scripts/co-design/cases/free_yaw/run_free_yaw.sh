@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#SBATCH --job-name="baseline"
+#SBATCH --job-name="free_yaw"
 #SBATCH --partition=compute-p2
 #SBATCH --time=15:00:00
 #SBATCH --nodes=2

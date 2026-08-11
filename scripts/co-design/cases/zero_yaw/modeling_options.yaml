@@ -79,10 +79,10 @@ ROSCO:
   ps_percent: 0.80
   VS_ControlMode: 2  # 2 = WSE TSR tracking
   WE_Mode: 0  # 0 = from OpenFAST.
-  TCIPC_ControlMode: 0
-  TCIPC_MaxTipDeflection: 0
+  TCIPC_ControlMode: 1
+  TCIPC_MaxTipDeflection: 25
   TCIPC_nHarmonics: 2
-  TCIPC_ZeroYawDeflection: 0
+  TCIPC_ZeroYawDeflection: 1
   TCIPC_MaxPitchAmplitude: 0.0873
   DISCON:
     TCIPC_GS_n: 12
