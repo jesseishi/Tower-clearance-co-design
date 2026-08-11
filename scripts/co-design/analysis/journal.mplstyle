@@ -1,0 +1,41 @@
+# Custom matplotlib style for the journal publication
+
+# Font settings
+font.family: serif
+font.serif: Latin Modern Roman
+#font.family: sans-serif  # bit ugly
+#font.sans-serif: Latin Modern Sans
+font.size: 9
+text.usetex: False
+
+# Have the same font size everywhere (no larger titles and stuff)
+axes.titlesize:  9   # ax.set_title()
+axes.labelsize:  9   # ax.set_xlabel() / ax.set_ylabel()
+xtick.labelsize: 9   # tick labels
+ytick.labelsize: 9   # tick labels
+legend.fontsize: 9   # legend text
+figure.titlesize: 9  # fig.suptitle()
+
+# Figure size
+figure.figsize: 6.85, 3.42
+
+# Axes settings
+axes.axisbelow: True
+axes.prop_cycle: cycler('color', ['000000', '366379', '5cb38c', 'e7d395'])
+axes.grid: True
+
+# Legend settings
+legend.framealpha: 0.9
+legend.loc: "upper right"
+
+# PDF/PostScript settings (embedded fonts)
+pdf.fonttype: 42
+ps.fonttype: 42
+
+# Save figure settings (minimize whitespace)
+figure.constrained_layout.use: True
+savefig.bbox: tight
+savefig.pad_inches: 0.0
+
+# Default colormap
+image.cmap: viridis
