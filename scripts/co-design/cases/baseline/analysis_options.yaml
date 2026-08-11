@@ -4,11 +4,6 @@ general:
 
 design_variables:
   control:
-    # servo:
-    #   TCIPC_MaxTipDeflection:
-    #     flag: true
-    #     min: 0.0
-    #     max: 25.0
     ps_percent:  # default = 0.8
       flag: true
       lower_bound: 0.6
