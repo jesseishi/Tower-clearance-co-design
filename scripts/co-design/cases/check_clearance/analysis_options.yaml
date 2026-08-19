@@ -1,0 +1,41 @@
+general:
+  folder_output: ../../../../data/co-design/check_clearance/
+  fname_output: check_clearance
+
+design_variables:
+  # control:
+    # ps_percent:  # default = 0.8
+    #   flag: true
+    #   lower_bound: 0.6
+    #   upper_bound: 1.0
+  hub:
+    cone:  # default = 0.06981317007977318 rad = 4 deg
+      flag: true
+      lower_bound: 0.07
+      upper_bound: 0.14  # 0.5235987756 rad = 30 deg
+  drivetrain:
+    uptilt:  # default = 0.10471975511965977 = 6 deg
+      flag: true
+      lower_bound: 0.1
+      upper_bound: 0.2  # 0.5235987756 rad = 30 deg
+    overhang:  # default = 12.0313
+      flag: true
+      lower_bound: 12
+      upper_bound: 15.0
+
+merit_figure_user: 
+  name: aeroelastic.AEP
+  ref: 82108621.30139959
+  max_flag: true
+    
+driver:
+  design_of_experiments:
+    flag: true
+    run_parallel: true
+    generator: FullFact
+    num_samples: 2  # For FullFact, this is not the amount of samples, but amount of levels.
+
+recorder:
+  flag: true
+  file_name: check_clearance.sql
+  includes: ["aeroelastic.*", "tune_rosco_ivc.*"]  # Just "*" doesn't work due to some non-uniqueness problem.
