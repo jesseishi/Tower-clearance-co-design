@@ -1,10 +1,11 @@
-#!/bin/sh
+#!/usr/bin/bash
 #
 #SBATCH --job-name="zero_yaw"
 #SBATCH --partition=compute-p2
 #SBATCH --time=15:00:00
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=58
+#SBATCH --ntasks=116
 #SBATCH --mem-per-cpu=2G
 #SBATCH --account=research-me-dcsc
 #SBATCH --mail-type=END
@@ -20,7 +21,7 @@
 
 # Load necessary modules. The intel module is needed to run OpenFAST
 # (libmkl_gf_lp64.so.2).
-module load 2025
+module load 2026 cpu
 module load intel/oneapi-all
 module load miniconda3
 
@@ -29,7 +30,7 @@ module load miniconda3
 export PYTHONUNBUFFERED=1
 
 # See: https://doc.dhpc.tudelft.nl/delftblue/Slurm-scheduler/#intel-mpi-job
-export I_MPI_PMI_LIBRARY=/cm/shared/apps/slurm/current/lib64/libpmi2.so
+# export I_MPI_PMI_LIBRARY=/cm/shared/apps/slurm/current/lib64/libpmi2.so
 
 # And run in the conda environment.
 conda activate tip_clearance

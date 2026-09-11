@@ -2,7 +2,7 @@
 #
 #SBATCH --job-name="reference" 
 #SBATCH --partition=compute-p2
-#SBATCH --time=12:00:00
+#SBATCH --time=05:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=2GB
@@ -19,9 +19,6 @@ module load miniconda3
 # not allow buffering for now.
 export PYTHONUNBUFFERED=1
 
-# OpenMDAO disables MPI when there is only 1 rank (ntasks=1), even though the
-# DOE code path needs it to reach the multiprocessing-based OpenFAST
-# parallelization. Force MPI to stay enabled.
 export OPENMDAO_USE_MPI=0
 
 # See: https://doc.dhpc.tudelft.nl/delftblue/Slurm-scheduler/#intel-mpi-job

@@ -18,10 +18,10 @@ design_variables:
       flag: true
       lower_bound: 0.0
       upper_bound: 0.5235987756  # 0.5235987756 rad = 30 deg
-    overhang:  # default = 12.0313
-      flag: true
-      lower_bound: 0.1
-      upper_bound: 30.0
+    # overhang:  # default = 12.0313
+    #   flag: true
+    #   lower_bound: 0.1
+    #   upper_bound: 30.0
 
 merit_figure_user: 
   name: aeroelastic.AEP
@@ -32,10 +32,10 @@ constraints:
   openfast_failed:
     flag: true
   user:
-    - name: aeroelastic.max_eff_TipDxc_towerPassing
-      lower_bound: [0.0]
-      upper_bound: [17.120584300491835]
-      ref: [17.120584300491835]
+    - name: aeroelastic.minimum_eff_tower_clearance
+      lower_bound: [15.893091360727944]
+      upper_bound: [1000]
+      ref: [15.893091360727944]
     - name: aeroelastic.max_eff_RootMyb
       lower_bound: [0.0]
       upper_bound: [104697.29296875]
@@ -56,7 +56,7 @@ constraints:
 driver:
   optimization:
     flag: true
-    max_iter: 50
+    max_iter: 100
     solver: LN_COBYLA  # LN_COBYLA (compared to COBYLA) has better bounds constraints and has better convergence/termination according to the NLOpt website.
 
 

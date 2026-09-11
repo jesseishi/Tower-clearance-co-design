@@ -1,8 +1,31 @@
 import os
 import sys
 
-from mpi4py import MPI
-from weis import weis_main
+# This is not very pretty but it works. I'm open to suggestions on how to handle this
+# better. When multiple workers try to do the same imports and have to read some files,
+# they might try to access it simultaneously. I found that just trying the import again
+# solved this issue.
+imports_successfull = False
+tries = 0
+while not imports_successfull:
+    tries += 1
+    try:
+        from mpi4py import MPI
+        from weis import weis_main
+
+        # This is another slow import not typically done here, but it helps to do it
+        # here.
+        from pyDOE3.orthogonal_arrays import ORTHOGONAL_ARRAYS
+        imports_successfull = True
+    except:
+        print(f"Didn't successfully import during try {tries}.")
+        if tries == 10:
+            print(f"Tried enough, terminating.")
+            sys.stdout.flush()  # Make sure all outputs are written
+            sys.stderr.flush()
+            os._exit(0)  # Terminate
+
+print(f"Successfully imported everything on this rank after {tries} tries.")
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 wt_input = os.path.join(this_dir, "../../../../data/turbine_models/IEA-15-240-RWT.yaml")
