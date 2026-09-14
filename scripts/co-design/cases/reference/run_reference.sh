@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 #
 #SBATCH --job-name="reference" 
 #SBATCH --partition=compute-p2
@@ -11,7 +11,7 @@
 
 # Load necessary modules. The intel module is needed to run OpenFAST
 # (libmkl_gf_lp64.so.2).
-module load 2025
+module load 2026 cpu
 module load intel/oneapi-all
 module load miniconda3
 
@@ -20,9 +20,6 @@ module load miniconda3
 export PYTHONUNBUFFERED=1
 
 export OPENMDAO_USE_MPI=0
-
-# See: https://doc.dhpc.tudelft.nl/delftblue/Slurm-scheduler/#intel-mpi-job
-export I_MPI_PMI_LIBRARY=/cm/shared/apps/slurm/current/lib64/libpmi2.so
 
 # And run in the conda environment.
 conda activate tip_clearance
