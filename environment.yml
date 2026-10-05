@@ -411,8 +411,8 @@ dependencies:
       - orbit-nrel==1.2.4
       - pooch==1.8.2
       - pyvista==0.46.3
-      - rosco==2.10.0
       - scooby==0.10.2
       - vtk==9.5.2
-      - weis==1.6
+      - -e ./src/ROSCO
+      - -e ./src/WEIS
 prefix: /home/jhummel/.conda/envs/tip_clearance
