@@ -2,7 +2,7 @@
 #
 #SBATCH --job-name="zero_yaw"
 #SBATCH --partition=compute-p2
-#SBATCH --time=15:00:00
+#SBATCH --time=10:00:00
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=58
 #SBATCH --ntasks=116
