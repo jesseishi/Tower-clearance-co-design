@@ -1,40 +1,31 @@
-#!/usr/bin/bash
+#!/bin/bash
 #
 #SBATCH --job-name="baseline"
-#SBATCH --partition=compute-p2
-#SBATCH --time=10:00:00
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=58
-#SBATCH --ntasks=116
-#SBATCH --mem-per-cpu=2G
-#SBATCH --account=research-me-dcsc
+#SBATCH --partition=rome
+#SBATCH --time=20:00:00
+#SBATCH -N 1
+#SBATCH --tasks-per-node 128
+#SBATCH --requeue
 #SBATCH --mail-type=END
-
-# Instead of requesting a certain amount of cpus, we request them to be divided
-# over just 2 nodes so that we always have enough memory for postprocessing.
-
-# TODO: Check how to set ntasks and cpus-per-task for this type of simulation
-# (many simulations for 1 setting). On the other hand, I needed the special
-# memory partition because I got an out-of-memory error with 8 GB available. Ah
-# yeah, if the simulations are parallel on 64 cores I also get more memory for
-# postprocessing (which happens on 1 core I think).
+#SBATCH --mail-user=j.i.s.hummel@tudelft.nl
 
 # Load necessary modules. The intel module is needed to run OpenFAST
 # (libmkl_gf_lp64.so.2).
-module load 2026 cpu
-module load intel/oneapi-all
-module load miniconda3
+module load 2025
+module load intel/2025b
+module load Miniconda3/25.5.1-1
+
+# Fix miniconda error.
+eval "$(conda shell.bash hook)"
 
 # If python buffers print statements it becomes a lot harder to debug. So let's
 # not allow buffering for now.
 export PYTHONUNBUFFERED=1
 
-# See: https://doc.dhpc.tudelft.nl/delftblue/Slurm-scheduler/#intel-mpi-job
-# export I_MPI_PMI_LIBRARY=/cm/shared/apps/slurm/current/lib64/libpmi2.so
-
 # And run in the conda environment.
 conda activate tip_clearance
 echo "Python executable: $(which python)."
 echo "Running weis_driver.py now..."
-srun python weis_driver.py
+# srun python weis_driver.py
+mpiexec -n 128 python weis_driver.py
 conda deactivate

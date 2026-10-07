@@ -17,10 +17,11 @@ while not imports_successfull:
         # here.
         from pyDOE3.orthogonal_arrays import ORTHOGONAL_ARRAYS
         imports_successfull = True
-    except:
+    except Exception as e:
         print(f"Didn't successfully import during try {tries}.")
         if tries == 10:
             print(f"Tried enough, terminating.")
+            print(e)
             sys.stdout.flush()  # Make sure all outputs are written
             sys.stderr.flush()
             os._exit(0)  # Terminate

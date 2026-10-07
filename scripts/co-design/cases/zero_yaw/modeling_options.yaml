@@ -1,9 +1,9 @@
 General:
   openfast_configuration:
     use_exe: True
-    FAST_exe: /scratch/jhummel/tip_clearance/src/openfast/install/bin/openfast
-    turbsim_exe: /scratch/jhummel/tip_clearance/src/openfast/install/bin/turbsim
-    path2dll: /scratch/jhummel/tip_clearance/src/ROSCO/rosco/lib/libdiscon.so
+    FAST_exe: /home/jhummel/Tower-clearance-co-design/src/openfast/install/bin/openfast
+    turbsim_exe: /home/jhummel/Tower-clearance-co-design/src/openfast/install/bin/turbsim
+    path2dll: /home/jhummel/Tower-clearance-co-design/src/ROSCO/rosco/lib/libdiscon.so
 
     # Can be used to save space.
     save_timeseries: False

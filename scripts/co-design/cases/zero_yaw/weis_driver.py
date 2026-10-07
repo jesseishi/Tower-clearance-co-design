@@ -19,9 +19,9 @@ while not imports_successfull:
         imports_successfull = True
     except Exception as e:
         print(f"Didn't successfully import during try {tries}.")
-        print(e)
         if tries == 10:
             print(f"Tried enough, terminating.")
+            print(e)
             sys.stdout.flush()  # Make sure all outputs are written
             sys.stderr.flush()
             os._exit(0)  # Terminate
