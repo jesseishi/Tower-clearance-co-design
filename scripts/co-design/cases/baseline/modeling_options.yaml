@@ -76,7 +76,7 @@ OpenFAST:
 
 ROSCO:
   flag: True
-  ps_percent: 0.80
+  ps_percent: 0.641
   VS_ControlMode: 2  # 2 = WSE TSR tracking
   WE_Mode: 0  # 0 = from OpenFAST.
   TCIPC_ControlMode: 0

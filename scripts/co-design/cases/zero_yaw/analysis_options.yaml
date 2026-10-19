@@ -32,16 +32,16 @@ design_variables:
       flag: true
       lower_bound: 0.6
       upper_bound: 1.0
-  # hub:
-  #   cone:  # default = 0.06981317007977318 rad = 4 deg
-  #     flag: true
-  #     lower_bound: 0.0
-  #     upper_bound: 0.5235987756  # 0.5235987756 rad = 30 deg
-  # drivetrain:
-  #   uptilt:  # default = 0.10471975511965977 = 6 deg
-  #     flag: true
-  #     lower_bound: 0.0
-  #     upper_bound: 0.5235987756  # 0.5235987756 rad = 30 deg
+  hub:
+    cone:  # default = 0.06981317007977318 rad = 4 deg
+      flag: true
+      lower_bound: 0.0
+      upper_bound: 0.5235987756  # 0.5235987756 rad = 30 deg
+  drivetrain:
+    uptilt:  # default = 0.10471975511965977 = 6 deg
+      flag: true
+      lower_bound: 0.0
+      upper_bound: 0.5235987756  # 0.5235987756 rad = 30 deg
     # overhang:  # default = 12.0313
     #   flag: true
     #   lower_bound: 0.1
@@ -98,7 +98,7 @@ driver:
   optimization:
     flag: true
     max_iter: 100
-    solver: LN_COBYLA  # LN_COBYLA (compared to COBYLA) has better bounds constraints and has better convergence/termination according to the NLOpt website.
+    solver: COBYLA  # LN_COBYLA (compared to COBYLA) has better bounds constraints and has better convergence/termination according to the NLOpt website.
 
 recorder:
   flag: true
