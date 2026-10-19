@@ -7,3 +7,6 @@
 [submodule "src/WEIS"]
 	path = src/WEIS
 	url = https://github.com/jesseishi/WEIS
+[submodule "src/WISDEM"]
+	path = src/WISDEM
+	url = https://github.com/NLRWindSystems/WISDEM.git
