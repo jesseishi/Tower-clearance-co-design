@@ -21,7 +21,7 @@ figure.figsize: 6.85, 3.42
 
 # Axes settings
 axes.axisbelow: True
-axes.prop_cycle: cycler('color', ['000000', '366379', '5cb38c', 'e7d395'])
+axes.prop_cycle: cycler('color', ['000000', '366379', '5cb38c', 'e7d395', '1e8d96', 'a8c391', '83a2b1', '74bdc3', 'a7c7b9', 'ccd5c4', 'e7e0ca'])
 axes.grid: True
 
 # Legend settings
