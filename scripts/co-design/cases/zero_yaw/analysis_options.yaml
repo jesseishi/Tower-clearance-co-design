@@ -98,7 +98,7 @@ driver:
   optimization:
     flag: true
     max_iter: 100
-    solver: COBYLA  # LN_COBYLA (compared to COBYLA) has better bounds constraints and has better convergence/termination according to the NLOpt website.
+    solver: LN_COBYLA  # LN_COBYLA (compared to COBYLA) has better bounds constraints and has better convergence/termination according to the NLOpt website.
 
 recorder:
   flag: true
