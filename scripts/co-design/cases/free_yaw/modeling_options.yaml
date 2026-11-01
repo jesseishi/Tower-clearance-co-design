@@ -83,7 +83,7 @@ ROSCO:
   TCIPC_MaxTipDeflection: 13.489
   TCIPC_nHarmonics: 2
   TCIPC_ZeroYawDeflection: 0
-  TCIPC_MaxPitchAmplitude: 0.0436
+  TCIPC_MaxPitchAmplitude: 0.069813170
   DISCON:
     TCIPC_GS_n: 12
     TCIPC_GS_WindSpeeds: [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]

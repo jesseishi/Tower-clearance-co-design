@@ -2,7 +2,7 @@
 #
 #SBATCH --job-name="zero_yaw"
 #SBATCH --partition=rome
-#SBATCH --time=20:00:00
+#SBATCH --time=96:00:00
 #SBATCH -N 1
 #SBATCH --tasks-per-node 128
 #SBATCH --requeue
