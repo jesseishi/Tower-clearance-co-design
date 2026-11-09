@@ -25,8 +25,8 @@ merit_figure_user:
   max_flag: true
     
 constraints:
-  # openfast_failed:
-  #   flag: true
+  openfast_failed:
+    flag: true
   user:
     # - name: aeroelastic.minimum_eff_tower_clearance
     #   lower_bound: [16.893091360727944]

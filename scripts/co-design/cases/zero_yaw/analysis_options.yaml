@@ -66,7 +66,7 @@ driver:
   #   solver: LN_COBYLA  # LN_COBYLA (compared to COBYLA) has better bounds constraints and has better convergence/termination according to the NLOpt website.
   design_of_experiments:
     flag: true
-    run_parallel: true
+    run_parallel: false  # This runs the samples in parallel but we want the DLCs to run in parallel.
     generator: FullFact
     num_samples: 5  # For FullFact, this is not the amount of samples, but amount of levels.
 

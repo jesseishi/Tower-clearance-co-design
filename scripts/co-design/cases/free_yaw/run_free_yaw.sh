@@ -2,9 +2,10 @@
 #
 #SBATCH --job-name="free_yaw"
 #SBATCH --partition=rome
-#SBATCH --time=96:00:00
+#SBATCH --time=100:00:00
 #SBATCH -N 1
-#SBATCH --tasks-per-node 128
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=128
 #SBATCH --requeue
 #SBATCH --mail-type=END
 #SBATCH --mail-user=j.i.s.hummel@tudelft.nl
@@ -22,10 +23,19 @@ eval "$(conda shell.bash hook)"
 # not allow buffering for now.
 export PYTHONUNBUFFERED=1
 
+# OpenMDAO disables MPI when there is only 1 rank (ntasks=1), even though the
+# DOE code path needs it to reach the multiprocessing-based OpenFAST
+# parallelization. Force MPI to stay enabled.
+export OPENMDAO_USE_MPI=1
+# Stop OpenMP/MKL threads from multiplying on top of the process pool.
+export OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+
 # And run in the conda environment.
 conda activate tip_clearance
 echo "Python executable: $(which python)."
 echo "Running weis_driver.py now..."
 # srun python weis_driver.py
-mpiexec -n 128 python weis_driver.py
+# mpiexec -n 128 python weis_driver.py
+srun --ntasks=1 --cpus-per-task=$SLURM_CPUS_PER_TASK --cpu-bind=cores python weis_driver.py
 conda deactivate
